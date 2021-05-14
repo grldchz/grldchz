@@ -1,0 +1,368 @@
+/**
+    GRLDCHZ - Social network built with jquery+react+bootstrap
+	MediaController.js is part of GRLDCHZ
+	
+    Copyright (C) 2021 grilledcheeseoftheday.com
+
+    GRLDCHZ is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    GRLDCHZ is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+**/
+body { 
+	padding-top: 50px;
+	background-color:#A67D3D;
+	color:#cccccc; 
+	font: 13px/1.4 Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
+.app{ color:#000000; }
+.navbar-default  .navbar-brand{
+color:#ffffff;
+}
+.bodyHideScroll{
+	overflow:hidden;
+}
+.profile-img { 
+	width: 64px;
+	border-radius: 6px;
+	cursor:pointer;
+}
+.media-img { 
+	border-radius: 8px;
+	cursor:pointer;
+}
+
+.mediaModalItem{
+	display:inline-block;
+}
+.grldMenuBrown{
+	background-color:#A67D3D;
+	background-image: url("../img/banner_bg.jpeg");
+	background-size: 600px 400px;
+transition: top 0.2s ease-in-out;
+    -moz-border-radius: 8px;
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+    /*behavior:url(border-radius.htc);*/
+    border-radius: 0px 0px 8px 8px;
+}
+.progressBarContainer{
+	background-color:transparent;
+	border:0px;
+	top:50px;
+	z-index:1050;
+}
+.closeButtonContainer{
+	background-color:transparent;
+	border:0px;
+}
+.grldMenuGreen{
+	background-color:#336699;
+}
+.grldImage{
+	padding-bottom:3px;
+}
+.grldVideo{
+	padding-bottom:3px;
+	width:100%;
+}
+.replyContainer{
+	margin-left:10px;
+	border-top:1px solid #f2f3f4;
+	border-left:1px solid #d6dbdf;
+	background-color: #FFF380;
+	padding:3px;
+    -moz-border-radius: 8px;
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+    /*behavior:url(border-radius.htc);*/
+    border-radius: 8px;
+}
+.share{
+	background-color: #d2d1a0;
+	border-top:1px solid #f2f3f4;
+	border-left:1px solid #d6dbdf;
+}
+.gcotd-btn{
+	padding:0px;
+	position:relative;
+	margin:3px;
+	height:30px;
+	border: 0px;
+}
+.gcotd-fixed-modal-btn{
+	padding:0px;
+	position:relative;
+	margin:5px 5px 3px 3px;
+	height:30px;
+	right: 3px;
+}
+.gcotd-menu-icon{
+	background-size: 50px 50px;
+    background-repeat: no-repeat;
+	width:50px;
+	height:50px;
+}
+.icon-list{
+	background-image: url("../img/icon-list.png");
+}
+.icon-picture{
+	background-image: url("../img/icon-picture.png");
+}
+.icon-video{
+	background-image: url("../img/icon-video.png");
+}
+.icon-profile{
+	background-image: url("../img/icon-profile.png");
+}
+.icon-down{
+	background-image: url("../img/icon-down.png");
+}
+.icon-new{
+	background-image: url("../img/icon-new-comment.png");
+}
+.icon-refresh{
+	background-image: url("../img/icon-refresh.png");
+}
+.icon-rotate-left{
+	background-image: url("../img/icon-rotate-left.png");
+}
+.icon-rotate-right{
+	background-image: url("../img/icon-rotate-right.png");
+}
+.icon-delete-selected{
+	background-image: url("../img/icon-delete-selected.png");
+}
+.icon-reprocess{
+	background-image: url("../img/icon-reprocess.png");
+}
+.gcotd-icon{
+	background-size: 30px 30px;
+    background-repeat: no-repeat;
+	width:30px;
+	height:30px;
+	top: 0px;
+}
+.gcotd-modal-body{
+clear:both;
+}
+.medialist-modal-body{
+	padding-bottom:50px;
+}
+.blue-loading{
+	background-image: url("../img/blue-loading.gif");
+	width:32px;
+	height:32px;
+}
+.icon-next{
+	background-image: url("../img/next.png");
+}
+.icon-more{
+	background-image: url("../img/icon-more.png");
+}
+.icon-close{
+	background-image: url("../img/icon-close.png");
+}
+.icon-reply{
+	background-image: url("../img/icon-reply-comment.png");
+}
+.icon-edit{
+	background-image: url("../img/icon-edit-comment.png");
+}
+.icon-share{
+	background-image: url("../img/icon-share-comment.png");
+}
+.icon-delete{
+	background-image: url("../img/icon-delete-comment.png");
+}
+.icon-upload{
+	background-image: url("../img/icon-upload.png");
+}
+.icon-search-users{
+	background-image: url("../img/icon-search-users.png");
+}
+.icon-search{
+	background-image: url("../img/icon-search.png");
+}
+.icon-request-user{
+	background-image: url("../img/icon-request-user.png");
+}
+.icon-remove-user{
+	background-image: url("../img/icon-remove-user.png");
+}
+.icon-accept-user{
+	background-image: url("../img/icon-accept-user.png");
+}
+.icon-reject-user{
+	background-image: url("../img/icon-reject-user.png");
+}
+.icon-hide-user{
+	background-image: url("../img/icon-hide-user.png");
+}
+.icon-unhide-user{
+	background-image: url("../img/icon-unhide-user.png");
+}
+.icon-friends{
+	background-image: url("../img/icon-friends.png");
+}
+.mediaCol{
+	padding:3px;
+}
+.noProfileImg{
+	font-size:20px;
+	cursor:pointer;
+}
+.grldListItemContainer{
+	background-color:#ffffff;
+	margin:5px;
+	padding:5px;
+	border-top:1px solid #f2f3f4;
+    -moz-border-radius: 8px;
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+    /*behavior:url(border-radius.htc);*/
+    border-radius: 8px;
+}
+
+.fixListItem{
+	position:fixed;
+	top:0%;
+	background-color:#ffffff;
+	z-index:1040;
+}
+.mediaScroller{
+	display:inline-block;
+	width:100%;
+}
+.mediaScrollerFixed{
+	overflow:auto;
+	position:fixed;
+	top:50px;
+	background-color:#ffffff;
+	width:100%;
+	z-index:9999;
+	margin-left:-10px;
+}
+.grldListContainer{
+	padding:10px;
+}
+.mainImage{
+	display:inline-block;
+	cursor:pointer;
+	border-radius: 8px;
+}
+.media-text{
+	display:inline-block;
+	vertical-align:top;
+	margin: 3px;
+}
+.progress{
+ 	 margin-bottom:0px;
+}
+.progressBar{
+	width:100%;
+ 	 margin-bottom:0px;
+}
+.mediaContainer{
+     padding-bottom:3px;
+ }
+ .grld-form{
+	padding:3px;
+}
+.noButton{
+	display:none;
+}
+.confirmation{
+}
+.confirmMsg{
+	
+}
+.mediaCount{
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 6px;
+    color: #000;
+    font-size: 10px;
+    line-height: 8px;
+    padding: 2px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    -moz-border-radius: 6px;
+    -webkit-border-top-left-radius: 6px;
+    -webkit-border-top-right-radius: 6px;
+    /*behavior:url(border-radius.htc);*/
+}
+.gcotd-expander{
+	background-color:#336699;
+	width:98%;
+}
+.media-navbar{
+	height:50px;
+	display:inline-block;
+	width:100%;
+	position:relative;
+}
+.upload-ok{
+    display: inline;
+    padding-left: 5px;
+}
+.nav-up {
+    top: -50px;
+}
+.modal-dialog {
+    margin: 3px;
+    width: 100%;
+    position: relative;
+}
+.image-viewer-title {
+	font-size:10px;
+}
+.image-viewer-close {
+	margin: -14px -10px;
+}
+.termsForm{
+background-color:#ffffff;
+}
+.grldForm{
+	clear:both;
+	background-color:#cccccc;
+	padding:3px;
+    -moz-border-radius: 8px;
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+    /*behavior:url(border-radius.htc);*/
+    border-radius: 8px;
+}
+.modal-header {
+    border-bottom: 1px solid #e5e5e5;
+    min-height: 50px;
+    padding: 2px;
+}
+.mediaContainerMedia{
+	max-width:800px;
+	background-color: #f0f0f0;
+    -moz-border-radius: 8px;
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+    /*behavior:url(border-radius.htc);*/
+    border-radius: 8px;
+}
+
+.mediaViews{
+	width:100%;
+	text-align:right;
+}
+.mediaTitle{
+	width:100%;
+}
+.modal { -webkit-overflow-scrolling: auto; }
+
